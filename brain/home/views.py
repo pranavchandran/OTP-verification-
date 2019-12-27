@@ -24,8 +24,8 @@ def signup(request):
             email1 = form.cleaned_data.get('Email')
             otp = random.randint(0000,9999)
             request.session['OTP_1']=otp
-            account = 'AC36ed39d83df601dd61b49495cb5f6d3f'
-            token = '87596398fee21eb98eff61a0e481a788'
+            account = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #your account of twilio
+            token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #token of twilio
             client = Client(account, token)
             client.messages.create(from_='+16415696832', to="" + str(mobile),body='Welcome ' + str(username) + ' to our Aliensworld verifcation code is ' + str(otp))
             email = EmailMessage('Account activation',str(otp),to=[email1])
