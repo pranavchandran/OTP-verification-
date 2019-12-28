@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+</head>
+<body>
+
+{% if messages %}
+{% for message in messages%}
+
+    {{message}}
+
+{% endfor %}
+{% endif %}
+
+<h1>Signup</h1>
+<form method="post">
+    {% csrf_token %}
+    <table>
+       {{form}}
+
+    </table>
+    <input value="submit"type="submit">
+</form>
+</body>
+</html>
